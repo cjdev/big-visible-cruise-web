@@ -1,0 +1,31 @@
+A{
+	color:black;
+	text-decoration: none;
+}
+.mainContainer{
+	text-align:center;
+}
+
+#buildStatusContainer div {
+	border:1px solid black;
+	font-size:15px;
+	height:20px;
+	padding-top:5px;
+	text-align:center;
+	vertical-align:top;
+	width:350px;
+}
+
+
+.Success{
+	background-color:#33FF66;
+}
+
+.Failure{
+	background-color:#FF0066;
+	text-decoration: line-through;
+}
+
+.Building{
+	background-color:#FFFF66;
+}

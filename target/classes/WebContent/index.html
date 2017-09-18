@@ -1,0 +1,48 @@
+<html>
+<head>
+
+	<script type="text/javascript" src="resources/scriptaculous/prototype.js"></script>
+	<script type="text/javascript" src="resources/scriptaculous/scriptaculous.js"></script>
+	<script type="text/javascript" src="resources/persist-js/persist.js"></script>
+	<script type="text/javascript" src="resources/BVC.js"></script>
+	<script type="text/javascript">
+		var menuOpen=false;
+		function toggleMenu(){
+			Effect.toggle('topNav', 'slide', { duration: 0.2 });
+			return false;
+		}
+		if(querySt("mode")=="mini"){
+			document.write("<link rel='alternative stylesheet' type='text/css' href='resources/mini.css'/>");
+		}else{
+			document.write("<link rel='alternative stylesheet' type='text/css' href='resources/default.css'/>");
+		}
+
+		filter=querySt("filter");
+	</script>
+
+
+	
+</head>
+<body onload="loadPage();">
+
+
+	<div id='menuOpener' onclick="toggleMenu();" >
+		MENU	
+	</div>
+	<div id='topNav' onclick="toggleMenu();" style="display:none;">
+		<div>
+			<div onclick='toggleShowHideBuilds()' class='mainMenuOption'>Show/Hide Hidden Builds</div>
+			<div onclick='saveState()' class='mainMenuOption'>Remember This Setup (Save)</div>
+			<div onclick='forgetState()' class='mainMenuOption'>Forget All State Related Changes</div>
+		</div>
+	</div>
+	
+	<div class='mainContainer'>
+		<div id='buildStatusContainer'>Please Wait: Loading Data From Cruise Servers...</div>
+	</div>
+
+
+
+
+</body>
+</html>

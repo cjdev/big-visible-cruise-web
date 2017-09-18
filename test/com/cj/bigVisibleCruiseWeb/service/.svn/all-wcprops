@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/23/trunk/big-visible-cruise-web/test/com/cj/bigVisibleCruiseWeb/service
+END
+CachingCruiseConnectorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/23/trunk/big-visible-cruise-web/test/com/cj/bigVisibleCruiseWeb/service/CachingCruiseConnectorTest.java
+END
+FunctionCallWithTimeoutTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/6/trunk/big-visible-cruise-web/test/com/cj/bigVisibleCruiseWeb/service/FunctionCallWithTimeoutTest.java
+END
+CruiseConnectorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/6/trunk/big-visible-cruise-web/test/com/cj/bigVisibleCruiseWeb/service/CruiseConnectorTest.java
+END

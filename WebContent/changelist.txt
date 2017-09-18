@@ -1,0 +1,30 @@
+Changelist:
+2009-08-28:
+   * Mini mode for embedding as an iFrame is switchable through: "?mode=mini" added to URL.
+   * Filtering by regular expression is now available through "?filter=regex" added to URL.
+2009-08-28:
+   * Removed tooltips because they were innacurate. 
+   * Now using the CCtray urls because they aren't broken on our cruise servers.
+
+2009-03-31
+   * Proper Timeout handling so broken build servers don't lock up BVC server.
+   * Builds are now sorted by name (thanks mwilliams)
+   * The build boxes are now rounded on webkit-based and mozilla-based browsers.
+   * Tooltips have been added that show the most interesting date/time information.  (thanks mwilliams)
+
+2009-03-10:
+   * Main menu link changed from a "+" to a "MENU"
+   * Build dropdowns now have a menu that currently allows build hiding.
+   * Build names are now how we get to the build status pages.
+   * Java servlet jar file added to project so it builds on everyones machines.
+   * Subtle Gradient added to build boxes to make them prettier.
+   
+   
+   
+TODO:
+   * Sorting
+      * By Build Name.
+      * By Build Status.
+      * User-Configured position.
+   * Make the project compile to a jar instead of a war for easier distributability.
+   * Integrate an HSQL database to allow build configuration to be done via a GUI.

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- import resource="bvcConfig.xml"/> -->
+
+	<bean
+		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="index">indexController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="indexController" class="com.cj.bigVisibleCruiseWeb.controller.IndexController">
+		<property name="cruiseConnector" ref="cruiseConnector" />
+	</bean>
+
+	<bean lazy-init="false"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="schedulerName" value="BVCScheduler" />
+		<property name="triggers">
+			<list>
+				<bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="cruiseConnector" />
+							<property name="targetMethod" value="refresh" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<!-- Every Thirty Seconds -->
+					<property name="cronExpression" value="0,30 * * * * ?" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="cruiseConnector"
+		class="com.cj.bigVisibleCruiseWeb.service.CachingCruiseConnector">
+		<property name="parser" ref="urlDocumentParser" />
+		<!--  <property name="cruiseLocations" ref="cruiseServerList"/> -->
+		<property name="cruiseLocationsFromCommaSeparatedString" value="${bigVisibleCruise.cruiseFeeds}" />
+	</bean>
+
+	<bean id="urlDocumentParser" class="com.cj.bigVisibleCruiseWeb.service.UrlDocumentParser" />
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="bvc.properties" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+	</bean>
+<!--  -->	
+	
+</beans>

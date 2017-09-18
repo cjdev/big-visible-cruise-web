@@ -1,0 +1,109 @@
+BODY{
+	background-color:black;
+	color:white;
+}
+A{
+	color:black;
+	text-decoration: none;
+}
+.mainContainer{
+	text-align:center;
+}
+.buildBlock{
+	color:black;
+	text-align:center;
+	border:1px solid black;
+	display:inline-block;
+	width:18em;
+	height:3em;
+	vertical-align:top;
+	padding-top:1em;
+	font-size:10pt;
+	position:relative; /*Relative Position Necessary For inside absolute Elements*/
+	background: url(gradient-white-DAVID.png) repeat-x;
+	border-radius: 2em;
+}
+.buildName{
+	cursor:pointer;
+}
+.Success{
+	background-color:#09B800;
+}
+
+.Failure{
+	background-color:#FF0044;
+
+}
+.Failure .buildName{
+	text-decoration: line-through;
+}
+
+.Building{
+	background-color:#FFFF11;
+}
+.buildHidden{
+	background-color:gray;
+}
+div.buildBlock .tooltip{display: none}
+div.buildBlock:hover .tooltip{
+	display:block;
+	position:absolute;
+	top:5em; left:2em; width:30em;
+	border:1px solid #000000;
+	background-color:white; 
+	color:#000000;
+	text-align: left;
+	z-index:5;
+	opacity:.9;
+	font-size:6pt;
+}
+
+/**************THE MENU */
+#menuOpener{
+	font-size:6pt;
+	color:gray;
+	cursor:pointer;
+}
+#topNav{
+	position: absolute;
+	background-color:white;
+	color: black;
+	opacity:0.9;
+	cursor:pointer;
+	margin-top:.5em;
+	margin-left:1em;
+	padding:.5em;
+	z-index:20;
+	border:1em solid #aaaaaa;
+	
+}
+/**************THE MENU */
+
+
+/**************Build Menu****/
+.buildMenuButton{
+	position:absolute;
+	right:1em;
+	top:0em;
+	cursor:pointer;
+	font-size:8pt;
+}
+.buildMenu{
+	border:1px solid #aaaaaa;
+	background-color:white;
+	color: black;
+	opacity:1;
+	position:absolute;
+	z-index: 5;
+	width:10em;
+	text-decoration: none;
+	right:0px;
+	top:1em;
+}
+.buildMenuOption{
+	opacity:1;
+	font-size:8pt;
+	text-decoration: none;
+	cursor:pointer;
+}
+/**************Widgets****/
